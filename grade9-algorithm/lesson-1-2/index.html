@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>کار و فناوری نهم · الگوریتم و فلوچارت</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf6;--ink:#22252b;--mute:#5d636e;--line:#cfd3da;--card:#fff;--accent:#2f6fb0;
+--start:#bfe3c6;--proc:#bcd8f2;--dec:#f7e08a;--io:#f4c4d4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg:#17191d;--ink:#eceef2;--mute:#a4abb7;--line:#3a3f48;--card:#1f2228;--accent:#7db4e6;
+--start:#3f6b4b;--proc:#3d6288;--dec:#8a7a2c;--io:#8a4a60}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17191d;--ink:#eceef2;--mute:#a4abb7;--line:#3a3f48;--card:#1f2228;--accent:#7db4e6;
+--start:#3f6b4b;--proc:#3d6288;--dec:#8a7a2c;--io:#8a4a60}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9;font-size:16px}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;font-weight:800;margin:8px 0 4px}
+h2{font-size:20px;font-weight:800;margin:0 0 6px}
+p{margin:6px 0}
+.sub{color:var(--mute);margin-bottom:18px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.step{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;font-size:13px;padding:0 12px;margin-bottom:4px}
+ul,ol{padding-right:22px;margin:6px 0}
+li{margin:4px 0}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.sym{display:inline-block;padding:6px 14px;font-size:14px;color:#22252b;text-align:center}
+.oval{background:var(--start);border-radius:999px}
+.rect{background:var(--proc);border-radius:4px}
+.dia{background:var(--dec);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);padding:16px 26px}
+.par{background:var(--io);clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);padding:6px 24px}
+.act{border-right:4px solid var(--accent);padding:2px 12px;margin:12px 0}
+.act b{display:block}
+.meta{font-size:13px;color:var(--mute)}
+.note{background:transparent;border:1px dashed var(--line);border-radius:10px;padding:8px 12px;margin-top:10px;font-size:15px}
+:focus-visible{outline:3px solid #3b82f6;outline-offset:2px}
+@media print{body{background:#fff;color:#000}section{break-inside:avoid;border-color:#999}}
+
+body{background:linear-gradient(160deg,#a8ddff 0%,#cdb8ff 50%,#ffc2dc 100%) fixed;background-color:#cdb8ff}
+:root[data-theme="dark"] body{background:linear-gradient(160deg,#16294a 0%,#2d2358 50%,#4a2342 100%) fixed;background-color:#2d2358}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background:linear-gradient(160deg,#16294a 0%,#2d2358 50%,#4a2342 100%) fixed;background-color:#2d2358}}
+section{box-shadow:0 2px 10px rgba(30,60,100,.08)}
+.hero{display:block;width:100%;height:auto;border-radius:18px;margin:4px 0 12px}
+.hero .o{fill:var(--start)}.hero .r{fill:var(--proc)}.hero .d{fill:var(--dec)}.hero .p{fill:var(--io)}
+.hero .s{stroke:var(--ink);stroke-width:1.5}.hero .l{stroke:var(--ink);stroke-width:1.5;fill:none}
+.ic{font-size:22px;margin-left:4px}
+.task{border-right:4px solid var(--dec);padding:2px 12px;margin:12px 0}
+.badge{font-size:13px;color:var(--mute)}
+.check{padding-right:0}.check li{list-style:none;margin:2px 0}.check li::before{content:"☐ "}
+.hero .o{fill:#7dffb0}.hero .r{fill:#fff}.hero .d{fill:#ffd84d}.hero .p{fill:#ff9ec4}
+.hero .s,.hero .l{stroke:#1f2a5a}
+.credit{text-align:center;color:#fff;font-weight:800;font-size:15px;margin:24px 0 0;padding:12px 14px;background:linear-gradient(135deg,#0f8f8a,#3f4bc4);border-radius:12px;text-shadow:0 1px 2px rgba(20,30,90,.35)}
+</style>
+</head>
+<body>
+<main>
+<svg class="hero" viewBox="0 0 380 150" role="img" aria-label="تصویر فلوچارت، ربات و چرخ‌دنده">
+<defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ed8c3"/><stop offset="1" stop-color="#6a7bff"/></linearGradient></defs>
+<rect width="380" height="150" rx="18" fill="url(#hg)"/>
+<ellipse class="s o" cx="70" cy="26" rx="42" ry="14"/>
+<path class="l" d="M70,40 V54"/>
+<polygon class="s d" points="70,54 112,78 70,102 28,78"/>
+<path class="l" d="M112,78 H150"/><path class="l" d="M28,78 H12 V122 H28"/>
+<rect class="s r" x="150" y="64" width="64" height="28" rx="4"/>
+<path class="l" d="M70,102 V118"/>
+<ellipse class="s o" cx="70" cy="132" rx="42" ry="14"/>
+<path d="M310,34 V24" stroke="#22252b" stroke-width="2" fill="none"/><circle cx="310" cy="17" r="7" fill="#ffd84d" stroke="#22252b" stroke-width="1.5"/>
+<rect x="255" y="55" width="10" height="24" rx="5" fill="#6db3f2" stroke="#22252b" stroke-width="1.5"/><rect x="355" y="55" width="10" height="24" rx="5" fill="#6db3f2" stroke="#22252b" stroke-width="1.5"/>
+<path d="M278,116 Q262,120 262,134" stroke="#22252b" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M278,116 Q262,120 262,134" stroke="#6db3f2" stroke-width="5" stroke-linecap="round" fill="none"/>
+<path d="M342,114 Q362,110 364,92" stroke="#22252b" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M342,114 Q362,110 364,92" stroke="#6db3f2" stroke-width="5" stroke-linecap="round" fill="none"/><circle cx="364" cy="88" r="6" fill="#ffd84d" stroke="#22252b" stroke-width="1.5"/>
+<rect x="278" y="104" width="64" height="36" rx="14" fill="#ffd166" stroke="#22252b" stroke-width="1.5"/><circle cx="310" cy="122" r="8" fill="#ff6b8b" stroke="#22252b" stroke-width="1.5"/>
+<rect x="264" y="34" width="92" height="66" rx="22" fill="#fff" stroke="#22252b" stroke-width="1.5"/>
+<rect x="274" y="44" width="72" height="46" rx="16" fill="#2b3a67"/>
+<ellipse cx="292" cy="64" rx="8" ry="9" fill="#7fe7ff"/><ellipse cx="328" cy="64" rx="8" ry="9" fill="#7fe7ff"/>
+<circle cx="295" cy="60" r="2.8" fill="#fff"/><circle cx="331" cy="60" r="2.8" fill="#fff"/>
+<circle cx="281" cy="78" r="4.5" fill="#ff8fb3" opacity=".85"/><circle cx="339" cy="78" r="4.5" fill="#ff8fb3" opacity=".85"/>
+<path d="M299,77 Q310,88 321,77" stroke="#7fe7ff" stroke-width="3" stroke-linecap="round" fill="none"/>
+<g transform="translate(230,118)"><circle r="14" fill="none" stroke="#5d636e" stroke-width="7" stroke-dasharray="5 4"/><circle r="9" fill="#fff" stroke="#5d636e" stroke-width="2"/></g>
+</svg>
+<h1>الگوریتم و فلوچارت</h1>
+<p class="sub">کار و فناوری · پایه نهم · فصل‌های ۱ و ۲ · پروژه‌محور، آنلاین یا حضوری</p>
+
+<section>
+<span class="step">۱ · چرا این درس؟</span>
+<h2>این مهارت کجا به کار می‌آید؟</h2>
+<p>الگوریتم یعنی فکر کردن مرحله‌به‌مرحله. هر شغلی که تصمیم‌های «اگر… آنگاه…» دارد، از آن استفاده می‌کند:</p>
+<ul>
+<li><span class="ic">👩‍💻</span> <b>برنامه‌نویس و مهندس نرم‌افزار (مهندسی کامپیوتر):</b> قبل از نوشتن کد، منطق برنامه را با فلوچارت طراحی می‌کنند. اپ‌ها، بازی‌ها و سایت‌هایی که هر روز استفاده می‌کنیم از همین‌جا شروع می‌شوند.</li>
+<li><span class="ic">🎮</span> <b>طراح بازی:</b> «اگر جان بازیکن صفر شد، بازی تمام شود؛ وگرنه ادامه پیدا کند.» این همان لوزی شرط است.</li>
+<li><span class="ic">🤖</span> <b>مهندس رباتیک و مکاترونیک:</b> رفتار ربات (مثلاً «اگر مانعی جلوی ربات بود، بپیچ») ابتدا به صورت الگوریتم نوشته می‌شود.</li>
+<li><span class="ic">⚡</span> <b>مهندس برق و الکترونیک:</b> دستگاه‌های هوشمند مثل چراغ راهنمایی و ماشین لباس‌شویی با منطق «اگر… آنگاه…» کار می‌کنند.</li>
+<li><span class="ic">🏭</span> <b>مهندس صنایع و مدیر کارخانه:</b> مراحل ساخت یک محصول از مواد خام تا بسته‌بندی را با فلوچارت می‌کشند تا وقت و هزینه کم شود.</li>
+<li><span class="ic">🩺</span> <b>پزشک و پرستار:</b> «راهنمای درمان» شبیه فلوچارت است: اگر تب بالا بود، این آزمایش را بخواه؛ اگر نبود، آن کار را بکن.</li>
+<li><span class="ic">✈️</span> <b>خلبان:</b> قبل از پرواز و در شرایط اضطراری، فهرست مرحله‌به‌مرحله و شرطی دارند تا هیچ‌چیز فراموش نشود.</li>
+<li><span class="ic">📊</span> <b>تحلیلگر داده و هوش مصنوعی:</b> برای پردازش داده‌ها و ساختن مدل‌ها، مراحل کار را ابتدا الگوریتم‌وار طراحی می‌کنند.</li>
+<li><span class="ic">🚀</span> <b>مدیر پروژه و کارآفرین:</b> برای راه‌اندازی یک کسب‌وکار یا کار تیمی، مراحل و تصمیم‌ها را روی کاغذ می‌چینند تا چیزی گم نشود.</li>
+</ul>
+<p class="note">طبق گزارش «آینده مشاغل ۲۰۲۵» مجمع جهانی اقتصاد، حدود ۷۰٪ کارفرماها تفکر تحلیلی را مهارتی ضروری می‌دانند. حتی اگر یکی از این شغل‌ها را انتخاب نکنی، این مهارت در درس، تصمیم‌گیری و کار تیمی به کارت می‌آید.</p>
+</section>
+
+<section>
+<span class="step">۲ · درس کوتاه</span>
+<h2>الگوریتم و فلوچارت در یک نگاه</h2>
+<p><b>الگوریتم:</b> دنباله‌ای از مرحله‌های دقیق و مرتب برای حل یک مسئله. یک الگوریتم خوب این سه ویژگی را دارد: <b>دقیق</b> است، <b>ترتیب</b> دارد و <b>پایان‌پذیر</b> است.</p>
+<p><b>فلوچارت:</b> نقشه‌ای تصویری از الگوریتم با چند نماد استاندارد و فلش:</p>
+<div class="legend">
+<span class="sym oval">شروع / پایان</span>
+<span class="sym rect">انجام کار</span>
+<span class="sym dia">شرط (بله/نه)</span>
+<span class="sym par">ورودی / خروجی</span>
+</div>
+<p><b>سه ساختار اصلی:</b></p>
+<ol>
+<li><b>ترتیبی:</b> مرحله‌ها یکی‌یکی پشت سر هم (مثل درست‌کردن املت).</li>
+<li><b>شرطی:</b> با لوزی دو مسیر ساخته می‌شود (مثل «باران می‌آید؟»).</li>
+<li><b>تکرار:</b> فلش به مرحله قبل برمی‌گردد تا شرط برقرار شود (مثل حدس زدن عدد تا جواب درست).</li>
+</ol>
+<p class="meta">برای کشیدن با نرم‌افزار: Edraw (معرفی‌شده در کتاب)؛ جایگزین رایگان آنلاین: draw.io. بدون کامپیوتر، با کاغذ و خودکار هم می‌شود.</p>
+</section>
+
+<section>
+<span class="step">۳ · فعالیت گروهی</span>
+<h2>فلوچارت در سه سطح</h2>
+<p>گروه‌های ۳ تا ۴ نفره می‌شوید. فلوچارت‌ها را روی کاغذ بکشید (فقط کشیدن کافی است)، عکسشان را در کلاس نشان دهید و با یک ورودی نمونه مسیرش را قدم‌به‌قدم دنبال کنید تا ببینید درست کار می‌کند یا نه.</p>
+</section>
+<section>
+<h2>سطح ۱ · آسان: ترتیب درست</h2>
+<p class="badge">فقط دنباله‌ای از کارها، بدون شرط</p>
+<p>مراحل زیر به ترتیب نوشته نشده‌اند. ترتیب درست «درست‌کردن املت» را پیدا کن و فلوچارتش را روی کاغذ بکش.</p>
+<ul>
+<li>نمک بزن</li>
+<li>در ماهیتابه بریز</li>
+<li>تخم‌مرغ‌ها را در ظرف بشکن</li>
+<li>املت را در بشقاب بکش</li>
+<li>ماهیتابه را روی گاز بگذار</li>
+<li>در ظرف خوب هم بزن</li>
+</ul>
+<div class="task"><p>سؤال: کدام مرحله را می‌شود «خروجی» حساب کرد؟ آن را با متوازی‌الاضلاع نشان بده.</p></div>
+</section>
+<section>
+<h2>سطح ۲ · متوسط: شرط</h2>
+<p class="badge">اولین بار با لوزی و دو مسیر</p>
+<div class="task"><p><b>تمرین الف (باران):</b> فلوچارتی بکش که اول وضع هوا را بررسی کند. اگر باران می‌آید، چتر و بارانی بردارد؛ اگر نمی‌آید، بدون چتر برود. در هر دو حالت، در پایان لباس مدرسه را بپوشد.</p></div>
+<div class="task"><p><b>تمرین ب (رفتن به کلاس):</b> فلوچارتی بکش که اگر کلاس امروز آنلاین است، لینک کلاس را باز کند؛ اگر حضوری است، کیف را ببندد و به مدرسه برود. در هر دو حالت در پایان دفتر را باز کند.</p>
+<p><b>امتیازی:</b> اگر کلاس آنلاین است، یک لوزی دیگر اضافه کن: «اینترنت وصل است؟»</p></div>
+<p class="badge">یادآوری: هر لوزی دو فلش خروجی «بله» و «نه» دارد و بعد از انجام کار هر مسیر، دو مسیر دوباره به هم می‌رسند.</p>
+</section>
+<section>
+<h2>سطح ۳ · سخت: تکرار</h2>
+<p class="badge">فلش برمی‌گردد و حلقه می‌سازد</p>
+<p>بازی حدس عدد: یک نفر عددی بین ۱ تا ۱۰ انتخاب می‌کند و بقیه حدس می‌زنند.</p>
+<ol>
+<li>فلوچارتی بکش که تا پیدا شدن جواب درست (حدس درست)، حدس‌زدن را تکرار کند.</li>
+<li>بعد آن را بهتر کن: اگر حدس از عدد مخفی بزرگ‌تر بود، پیام «عدد کوچک‌تر است» و اگر کوچک‌تر بود، پیام «عدد بزرگ‌تر است» نمایش بده. برای این کار به دو لوزی (شرط) نیاز داری: یکی «حدس درست است؟» و یکی «حدس بزرگ‌تر است؟». پیام‌ها را با متوازی‌الاضلاع (خروجی) نشان بده.</li>
+<li>ردگیری: فرض کن عدد مخفی ۵ است و حدس‌های تو به ترتیب ۸، ۳ و ۵ هستند. این حدس‌ها را یکی‌یکی وارد فلوچارتت کن و بنویس بعد از هر حدس چه پیامی نمایش داده می‌شود.</li>
+</ol>
+</section>
+<section>
+<h2>چک‌لیست بازبینی هم‌گروهی</h2>
+<ul class="check">
+<li>فقط یک شروع و حداقل یک پایان دارد.</li>
+<li>هر لوزی دو خروجی «بله» و «نه» دارد.</li>
+<li>همه فلش‌ها جهت دارند.</li>
+<li>هیچ حلقه‌ای بی‌پایان نیست.</li>
+<li>با یک ورودی نمونه مسیرش را دنبال کردم و درست بود.</li>
+</ul>
+</section>
+
+<p class="credit">تهیه و تنظیم: آتوسا فرشادپور | دبیر کار و فناوری</p>
+</main>
+</body>
+</html>
