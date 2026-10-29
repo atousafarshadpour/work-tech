@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فعالیت فصل دوم: طراحی خلاقانه یک محصول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b2447;--muted:#53608a;--indigo:#3f3fa8;--violet:#7a5af8;--gold:#f5b83d;--card:#ffffffee;--line:#dcdffa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Vazirmatn,Tahoma,sans-serif;color:var(--ink);line-height:1.95;font-size:17px;
+background:radial-gradient(900px 500px at 90% -5%,#e3dcff 0,transparent 60%),radial-gradient(800px 500px at 0% 40%,#d6ecff 0,transparent 60%),radial-gradient(700px 500px at 100% 95%,#ffe6d5 0,transparent 60%),#f4f3ff;background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.hero{margin:22px 0 8px;border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(63,63,168,.28)}
+.hero svg{display:block;width:100%;height:auto}
+.title{text-align:center;padding:22px 0 6px}
+.chap{display:inline-block;background:var(--indigo);color:#fff;border-radius:99px;padding:2px 20px;font-weight:600;font-size:15px}
+.title h1{margin:10px 0 4px;font-size:clamp(26px,6vw,40px);line-height:1.6;font-weight:800}
+.title p{margin:0 auto;color:var(--muted);max-width:56ch}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(63,63,168,.08)}
+h2{margin:0 0 8px;font-size:22px;font-weight:800;color:var(--indigo)}
+ul,ol{margin:8px 0 0;padding-right:22px}
+li{margin:2px 0}
+li::marker{color:var(--violet)}
+.goal{background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;border:0}
+.goal h2{color:var(--gold)}
+footer{text-align:center;color:var(--muted);font-weight:600;padding:22px 0 30px}
+footer span{display:inline-block;border-top:2px solid var(--gold);padding-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+<svg viewBox="0 0 800 360" role="img" aria-label="تصویر یک رایانه که روی صفحه‌ی آن طرح یک چراغ مطالعه کشیده شده و در اطراف آن مداد، خط‌کش، چرخ‌دنده و لامپ ایده دیده می‌شود">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24307a"/><stop offset=".55" stop-color="#4a36b5"/><stop offset="1" stop-color="#8a4fd8"/></linearGradient>
+<pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#6f86ff" stroke-opacity=".25" stroke-width="1"/></pattern>
+<pattern id="gs" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#5fd4ff" stroke-opacity=".18" stroke-width="1"/></pattern>
+</defs>
+<rect width="800" height="360" fill="url(#bg)"/>
+<rect width="800" height="360" fill="url(#g)"/>
+<circle cx="90" cy="60" r="3" fill="#fff" opacity=".7"/><circle cx="700" cy="50" r="2.5" fill="#fff" opacity=".7"/><circle cx="740" cy="300" r="3" fill="#fff" opacity=".6"/><circle cx="60" cy="300" r="2.5" fill="#fff" opacity=".6"/><circle cx="640" cy="110" r="2" fill="#fff" opacity=".6"/>
+<!-- monitor -->
+<rect x="380" y="240" width="40" height="46" fill="#aab4ff"/>
+<rect x="335" y="284" width="130" height="14" rx="7" fill="#c9d0ff"/>
+<rect x="240" y="36" width="320" height="214" rx="16" fill="#e9ecff"/>
+<rect x="254" y="50" width="292" height="186" rx="8" fill="#0b1740"/>
+<rect x="254" y="50" width="292" height="186" rx="8" fill="url(#gs)"/>
+<!-- lamp sketch -->
+<g fill="none" stroke="#5fe0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<rect x="360" y="196" width="80" height="10" rx="3"/>
+<polyline points="400,196 372,150 420,108"/>
+<polygon points="414,98 462,84 486,128 438,140" fill="#5fe0ff" fill-opacity=".15"/>
+<path d="M452 148 L468 170 M436 150 L444 176 M468 142 L490 156" stroke="#ffd36b" stroke-width="2.5"/>
+</g>
+<g fill="#0b1740" stroke="#ffd36b" stroke-width="2"><rect x="394" y="190" width="12" height="12"/><rect x="366" y="144" width="12" height="12"/><rect x="414" y="102" width="12" height="12"/></g>
+<g stroke="#ff8fb3" stroke-width="1.8" fill="none"><path d="M360 216V226M440 216V226M360 221H440"/></g>
+<text x="400" y="222" font-size="11" fill="#ff8fb3" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" dy="-5">۸ cm</text>
+<text x="275" y="78" font-size="12" fill="#5fe0ff" font-family="Vazirmatn,Tahoma,sans-serif">چراغ مطالعه</text>
+<!-- pencil -->
+<g transform="translate(110 250) rotate(-35)">
+<rect x="0" y="0" width="150" height="26" fill="#ffc83d"/>
+<rect x="0" y="0" width="150" height="7" fill="#ffdf7e"/>
+<rect x="-18" y="0" width="18" height="26" rx="4" fill="#ff7a9c"/>
+<polygon points="150,0 195,13 150,26" fill="#f6d9b2"/>
+<polygon points="182,8 195,13 182,18" fill="#2a2a45"/>
+</g>
+<!-- ruler -->
+<g transform="translate(560 110) rotate(18)">
+<rect width="190" height="40" rx="6" fill="#ffe9a8"/>
+<g stroke="#8a6a1c" stroke-width="2"><path d="M14 0v14M34 0v9M54 0v14M74 0v9M94 0v14M114 0v9M134 0v14M154 0v9M174 0v14"/></g>
+</g>
+<!-- gear -->
+<g transform="translate(655 255)"><circle r="30" fill="none" stroke="#ffd36b" stroke-width="12" stroke-dasharray="9 7.1"/><circle r="24" fill="none" stroke="#ffd36b" stroke-width="5"/><circle r="8" fill="#ffd36b"/></g>
+<!-- bulb -->
+<g transform="translate(130 100)"><circle r="26" fill="#fff3b0" opacity=".95"/><rect x="-11" y="22" width="22" height="12" rx="3" fill="#cfd5ff"/><path d="M-8 4 Q0 -10 8 4 M0 -4V22" stroke="#e59a1a" stroke-width="2.5" fill="none"/>
+<g stroke="#fff3b0" stroke-width="3" stroke-linecap="round"><path d="M0-42V-34M-34-24l6 5M34-24l-6 5M-42 0H-34M42 0H34"/></g></g>
+</svg>
+</div>
+
+<div class="title">
+<span class="chap">فصل دوم: ترسیم با رایانه</span>
+<h1>🎨 طراحی خلاقانه یک محصول</h1>
+<p>ایده‌ات را به یک طرح واضح و قابل‌فهم تبدیل کن!</p>
+</div>
+
+<section>
+<h2>شرح فعالیت</h2>
+<p style="margin:0">در این فعالیت، می‌توانید به‌صورت انفرادی یا دونفره یک محصول یا وسیله را انتخاب کنید و برای آن طرحی خلاقانه ارائه دهید. برای طراحی محصول خود می‌توانید از نرم‌افزارهای رایانه‌ای استفاده کنید یا طرحتان را با دست روی کاغذ بکشید.</p>
+</section>
+
+<section>
+<h2>چند ایده برای انتخاب محصول</h2>
+<ul>
+<li>میز مطالعه‌ی خلاقانه یا اتاق مطالعه</li>
+<li>وسایل کاربردی برای مدرسه</li>
+<li>طراحی بسته‌بندی یک محصول</li>
+<li>طراحی بطری یا شیشه‌ی سس</li>
+<li>کیف مدرسه با امکانات جدید</li>
+<li>چراغ مطالعه‌ی خلاقانه</li>
+<li>ابداع یک وسیله‌ی جدید برای حل یک مشکل</li>
+<li>هر محصول دیگری که ایده‌ی آن را دارید!</li>
+</ul>
+</section>
+
+<section>
+<h2>جلسه‌ی اول: انتخاب ایده و طراحی اولیه</h2>
+<p style="margin:0">محصول خود را انتخاب کنید و طرح اولیه‌ی آن را رسم کنید. سپس درباره‌ی کاربرد محصول و ویژگی‌های خلاقانه‌ی آن فکر کنید.</p>
+</section>
+
+<section>
+<h2>جلسه‌ی دوم: تکمیل و آماده‌سازی طرح</h2>
+<p style="margin:0">در این جلسه، طرح خود را کامل‌تر کنید و موارد زیر را در نظر بگیرید:</p>
+<ol>
+<li>نام مناسبی برای محصول خود انتخاب کنید.</li>
+<li>شکل محصول را واضح‌تر و کامل‌تر رسم کنید.</li>
+<li>قسمت‌های مهم محصول را مشخص کنید و در صورت نیاز، برای آن‌ها توضیح کوتاه بنویسید.</li>
+<li>اگر لازم است، اندازه‌های تقریبی بخش‌های مختلف را اضافه کنید.</li>
+<li>مشخص کنید محصول شما چه کاربردی دارد، چه مشکلی را حل می‌کند یا انجام چه کاری را آسان‌تر می‌کند.</li>
+<li>ویژگی خلاقانه‌ی محصول خود را توضیح دهید.</li>
+</ol>
+</section>
+
+<section>
+<h2>نکات مهم</h2>
+<ul>
+<li>شکل محصول باید واضح و قابل‌فهم باشد.</li>
+<li>قسمت‌های مهم آن باید مشخص باشند.</li>
+<li>بتوانید درباره‌ی محصول و کاربرد آن توضیح دهید.</li>
+<li>لازم نیست نقشه‌کشی حرفه‌ای بلد باشید؛ مهم این است که ایده‌ی خود را به‌خوبی نمایش دهید.</li>
+</ul>
+</section>
+
+<section>
+<h2>معرفی طرح به کلاس</h2>
+<p style="margin:0">در پایان، طرح خود را به کلاس معرفی کنید و درباره‌ی ایده، کاربرد و ویژگی‌های خلاقانه‌ی محصولتان توضیح دهید.</p>
+</section>
+
+<section class="goal">
+<h2>هدف فعالیت</h2>
+<p style="margin:0">تقویت خلاقیت و ایده‌پردازی، آشنایی با فرایند طراحی محصول و تمرین تبدیل یک ایده به طرحی قابل‌فهم و کاربردی.</p>
+</section>
+
+<footer><span>تهیه شده توسط: آتوسا فرشادپور</span></footer>
+</div>
+</body>
+</html>
