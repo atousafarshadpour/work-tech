@@ -12,7 +12,7 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Vazirmatn,Tahoma,sans-serif;color:var(--ink);line-height:1.95;font-size:17px;
 background:radial-gradient(900px 500px at 90% -5%,#e3dcff 0,transparent 60%),radial-gradient(800px 500px at 0% 40%,#d6ecff 0,transparent 60%),radial-gradient(700px 500px at 100% 95%,#ffe6d5 0,transparent 60%),#f4f3ff;background-attachment:fixed}
-.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.wrap{max-width:1600px;margin:0 auto;padding:0 3vw}
 .hero{margin:22px 0 8px;border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(63,63,168,.28)}
 .hero svg{display:block;width:100%;height:auto}
 .hero .m{display:none}
@@ -25,7 +25,8 @@ section{background:var(--card);border:1px solid var(--line);border-radius:18px;p
 h2{margin:0 0 8px;font-size:22px;font-weight:800;color:var(--indigo)}
 ul,ol{margin:8px 0 0;padding-right:22px}
 li{margin:2px 0;break-inside:avoid}
-@media(min-width:900px){section ul,section ol{columns:2;column-gap:56px}}
+.grid{display:block}
+@media(min-width:900px){.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid section{margin:0}.grid .full{grid-column:1/-1}}
 li::marker{color:var(--violet)}
 .goal{background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;border:0}
 .goal h2{color:var(--gold)}
@@ -139,6 +140,7 @@ footer span{display:inline-block;border-top:2px solid var(--gold);padding-top:10
 <p>ایده‌ات را به یک طرح واضح و قابل‌فهم تبدیل کن!</p>
 </div>
 
+<div class="grid">
 <section>
 <h2>شرح فعالیت</h2>
 <p style="margin:0">در این فعالیت، می‌توانید به‌صورت انفرادی یا دونفره یک محصول یا وسیله را انتخاب کنید و برای آن طرحی خلاقانه ارائه دهید. برای طراحی محصول خود می‌توانید از نرم‌افزارهای رایانه‌ای استفاده کنید یا طرحتان را با دست روی کاغذ بکشید.</p>
@@ -191,10 +193,12 @@ footer span{display:inline-block;border-top:2px solid var(--gold);padding-top:10
 <p style="margin:0">در پایان، طرح خود را به کلاس معرفی کنید و درباره‌ی ایده، کاربرد و ویژگی‌های خلاقانه‌ی محصولتان توضیح دهید.</p>
 </section>
 
-<section class="goal">
+<section class="goal full">
 <h2>هدف فعالیت</h2>
 <p style="margin:0">تقویت خلاقیت و ایده‌پردازی، آشنایی با فرایند طراحی محصول و تمرین تبدیل یک ایده به طرحی قابل‌فهم و کاربردی.</p>
 </section>
+
+</div>
 
 <footer><span>تهیه شده توسط: آتوسا فرشادپور</span></footer>
 </div>
